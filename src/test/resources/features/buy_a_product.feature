@@ -20,7 +20,7 @@ Feature: buy a product in the saucedemo
       | standard_user | secret_sauce | 123 | Thank you for your order! |
 
 
-  Scenario Outline: testing the purchase of a product without entering a first name at checkout
+  Scenario Outline: test the entry of purchase data
     Given I add a product to the cart
     And we proceed to checkout
     When I am adding the details for the purchase.
@@ -29,4 +29,6 @@ Feature: buy a product in the saucedemo
     Then validate failed message <message>
     Examples:
       | first_name  | last_name     | postal_code   | message |
-      |  | secret_sauce | 123 | Error: First Name is required |
+      |  | tanos | 123 | Error: First Name is required |
+      | leider |  | 123 | Error: Last Name is required |
+      | leider | tanos |  | Error: Postal Code is required |

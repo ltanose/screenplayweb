@@ -3,7 +3,6 @@ package com.co.choucair.stepdefinitions;
 import com.co.choucair.questions.ValidateErrorDataCheckOut;
 import com.co.choucair.utils.KillBrowser;
 import io.cucumber.java.After;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.thucydides.core.webdriver.SerenityWebdriverManager;
@@ -26,4 +25,5 @@ public class BuyProductErrorStepDefinition {
     public void validateFailedMessageMessage(String message) {
         OnStage.theActorInTheSpotlight().should(seeThat(ValidateErrorDataCheckOut.inTheForm(), equalTo(message)));
     }
+
 }
