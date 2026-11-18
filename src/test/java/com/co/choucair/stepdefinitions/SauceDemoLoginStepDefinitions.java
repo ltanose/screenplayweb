@@ -2,11 +2,13 @@ package com.co.choucair.stepdefinitions;
 
 import com.co.choucair.models.UserLoginData;
 import com.co.choucair.questions.ValidateLogin;
+import com.co.choucair.questions.ValidateLoginError;
 import com.co.choucair.tasks.Login;
 import com.co.choucair.utils.KillBrowser;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -53,4 +55,9 @@ public class SauceDemoLoginStepDefinitions {
 
     }
 
+    @Then("validate message error on screen (.*)$")
+    public void validateMessageErrorOnScreenMessage(String text) {
+
+        OnStage.theActorInTheSpotlight().should(seeThat(ValidateLoginError.of(), equalTo(text)));
+    }
 }

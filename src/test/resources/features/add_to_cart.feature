@@ -1,3 +1,4 @@
+@AddCart
 Feature: add to product to cart in saucedemo
 
   Background:

@@ -1,3 +1,4 @@
+@BuyProduct
 Feature: buy a product in the saucedemo
 
   Background:
